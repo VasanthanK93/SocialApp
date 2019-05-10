@@ -86,9 +86,8 @@ module.exports = {
     },
 
     getPostedContent: async (req, res) => {
-        try {
-            var userID = req.query.userID
-            let postContent = await postContentModel.find({ createdBy: userID })
+        try {           
+            let postContent = await postContentModel.find({})
             if (!postContent) {
                 return res.json({ status: "success", message: "No post is saved by you", data: postContent })
             } else {
