@@ -58,7 +58,15 @@ module.exports = {
 
     saveDraft: async (req, res) => {
         try {
-            let postDraft = new draftContentModel(req.body)
+            let postDraft = {
+                subject: req.body.subject,
+                content: req.body.content,
+                createdBy: req.body.createdBy,
+                ModifiedBy: req.body.ModifiedBy,
+                status: req.body.status,
+                createdDate: new Date(),
+                modifiedDate: new Date()
+            }
             let createDraft = await draftContentModel.create(postDraft)
 
             return res.json({ status: "success", message: "Your Content is saved in Draft", data: createDraft })
