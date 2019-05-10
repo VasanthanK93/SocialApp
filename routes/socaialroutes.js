@@ -15,6 +15,5 @@ router.post('/addlike',socialController.addLike)
 router.post('/adddislike',socialController.addDislike)
 router.post('/removelike',socialController.removeLike)
 router.post('/removedislike',socialController.removeDislike)
-router.post('/addComments',socialController.addComments)
 
 module.exports = router;
